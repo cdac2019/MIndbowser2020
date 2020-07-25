@@ -1,0 +1,16 @@
+package com.lns.enty;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="manager_reg")
+public class ManagerRegister {
+	private String fristname;
+	private String lastname;
+	private String password;
+	private String email; 
+	private String address;
+	private String  dob;
+	
+}

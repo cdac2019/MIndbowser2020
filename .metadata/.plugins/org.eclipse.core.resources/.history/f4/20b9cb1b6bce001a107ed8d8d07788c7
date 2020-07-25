@@ -1,0 +1,14 @@
+package com.lbs;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MindespringprojectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MindespringprojectApplication.class, args);
+		System.out.println("Running");
+	}
+
+}

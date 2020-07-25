@@ -1,0 +1,35 @@
+package com.lbs.repositery;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lbs.entity.ManagerReg;
+@Repository
+public class RepositeryMB {
+	 
+		@PersistenceContext()
+		private EntityManager entitymanager;
+	@Transactional
+		public void save(ManagerReg reg) {
+			// TODO Auto-generated method stub
+			entitymanager.merge(reg);
+		}
+	public long isValidUser(String email,String password) {
+		return (long)entitymanager.createQuery("select count(r) from ManagerReg r where r.email = :email and r.password = :pwd")										
+				.setParameter("email", email)
+				.setParameter("pwd", password).getSingleResult();
+		
+	}
+	public ManagerReg fetch(String email, String password) {
+		return (ManagerReg)entitymanager.createQuery("select r from Register r where r.username =:email and r.password= :pwd")
+				.setParameter("pwd", password)
+				.setParameter("email",email)
+				.getSingleResult();
+
+		// TODO Auto-generated method stub
+		 
+	}
+	}

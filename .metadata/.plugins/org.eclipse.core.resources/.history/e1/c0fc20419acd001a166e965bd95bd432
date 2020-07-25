@@ -1,0 +1,19 @@
+package com.lbs.entity;
+
+ 
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table(name="Employee_Reg")
+public class EmployeeReg {
+    
+	private String empid;
+	private String fristname;
+	private String lastname; 
+	private String address;
+	private String dob;
+	private long mobile;
+	private String city;
+	
+}

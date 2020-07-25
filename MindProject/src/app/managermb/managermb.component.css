@@ -1,0 +1,15 @@
+body {
+    color: #fff;
+    
+    font-family: 'Roboto', sans-serif;
+} 
+   div{
+        background: #4c535d;
+         padding-top: 100%;
+      }
+      h1{
+        color: blue;
+        margin-top: -1300px;
+       
+        margin-left: 235px;
+      }

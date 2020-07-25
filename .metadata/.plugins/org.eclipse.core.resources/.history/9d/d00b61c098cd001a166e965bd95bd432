@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package com.lbs.entity;
+
+/**
+ * @author Nava
+ *
+ */
+public class ManagerReg {
+
+	/**
+	 * 
+	 */
+	public ManagerReg() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

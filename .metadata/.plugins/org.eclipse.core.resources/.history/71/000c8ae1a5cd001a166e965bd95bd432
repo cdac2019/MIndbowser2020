@@ -1,0 +1,21 @@
+package com.lbs.repositery;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lbs.entity.ManagerReg;
+
+@Repository
+public class RepositeryMB {
+ 
+	@PersistenceContext()
+	private EntityManager entitymanager;
+@Transactional
+	public void save(ManagerReg reg) {
+		// TODO Auto-generated method stub
+		entitymanager.merge(reg);
+	}
+}

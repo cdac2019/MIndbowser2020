@@ -1,0 +1,33 @@
+package com.lbs.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lbs.entity.ManagerReg;
+import com.lbs.repositery.RepositeryMB;
+
+@RestController
+public class MindController {
+
+	@Autowired
+	private RepositeryMB repositerymb;
+	
+	//@RequestMapping(value = "/register", method = RequestMethod.POST)
+	
+	@GetMapping("/reg31")
+	public String registerion( ) {
+
+		 System.out.println("register Running");
+
+		  
+		return "Registration Successfull!!!";
+	}
+	 	 
+
+}

@@ -1,0 +1,25 @@
+package com.lbs.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lbs.repositery.RepositeryMB;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+public class MindController {
+
+	@Autowired
+	private RepositeryMB repositerymb;
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String register(@RequestBody Register reg) {
+
+		// System.out.println(reg.toString());
+
+		 repositerymb.save(reg);
+		return "Registration Successfull!!!";
+	}
+
+}

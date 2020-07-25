@@ -1,0 +1,44 @@
+ 
+<body>
+    <div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">EmpID</th>
+                            <th scope="col">fristname </th>
+                            <th scope="col">LastName</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">BirthDate</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">City</th>
+                            
+                              
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let userlist of dem " >
+                            <td>{{ userlist.empid }}</td>
+                            <td>{{ userlist.fristname }}</td>
+                            <td>{{ userlist.lastname }}</td>
+                             <td>{{ userlist.address }}</td>
+                            <td>{{ userlist.dob }}</td>
+                            <td>{{ userlist.mobile }}</td>
+                            <td>{{ userlist.city }}</td>
+                            <td><button (click)="deleteEmployee(userlist.empid)">Delete</button></td>
+                            <td><button (click)="UpdateEmployee(userlist.empid)">Update</button></td> 
+                
+                        </tr>
+
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</body>

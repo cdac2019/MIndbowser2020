@@ -1,0 +1,56 @@
+package com.lbs.entity;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "manager_reg")
+public class ManagerReg {
+
+	private String fristname;
+	private String lastname;
+	private long password;
+	private String email; 
+	private String address;
+	private Date  dob;
+	
+	
+	public String getFristname() {
+		return fristname;
+	}
+	public void setFristname(String fristname) {
+		this.fristname = fristname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public long getPassword() {
+		return password;
+	}
+	public void setPassword(long password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+}
