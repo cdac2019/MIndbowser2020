@@ -5,6 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import com.sun.istack.NotNull;
 
 
 //Manager class
@@ -23,22 +28,42 @@ public void setId(int id) {
 	this.id = id;
 }
 	@Column(name = "fristname")
+	@NotNull
+	@NotBlank(message = "FristName may not be null")
 	private String fristname;
 	 
-	 @Column(name = "lastname")
+	@Column(name = "lastname")
+	@NotBlank(message = "LastName may not be null")
 	private String lastname;
 	 
-	 @Column(name = "password")
+	@Column(name = "password")
+	@NotNull
+	@Pattern.List({
+	    @Pattern(regexp = "(?=.*[0-9]).+", message = "Password must contain one digit."),
+	    @Pattern(regexp =  "(?=.*[a-z]).+", message = "Password must contain one lowercase letter."),
+	    @Pattern(regexp = "(?=.*[A-Z]).+", message = "Password must contain one uppercase letter."),
+	    @Pattern(regexp = "(?=.*[!@#$%^&*+=?-_()/\"\\.,<>~`;:]).+", message ="Password must contain one special character.")
+	     
+	})
+	@Size(min=5,max=12)
 	private String password;
 	 
 	 
-	 @Column(name = "email")
+	@Column(name = "email")
+	@NotBlank(message = " Email may not be null")
+	@Pattern.List({
+	    @Pattern(regexp = "(?=.*[0-9]).+", message = " Email must contain one digit."),
+	    @Pattern(regexp =  "(?=.*[a-z]).+", message = "Email must contain  lowercase letter."),
+	    @Pattern(regexp = "(?=.*[@.]).+", message ="Email must contain @ special character.")
+	     })
 	private String email; 
 	 
-	 @Column(name = "address")
+	@Column(name = "address")
+	@NotBlank(message = "Address may not be null")
 	private String address;
 	
 	@Column(name = "dob")
+	@NotBlank(message = "Birth of date may not be null")
 	private String  dob;
 	
 	

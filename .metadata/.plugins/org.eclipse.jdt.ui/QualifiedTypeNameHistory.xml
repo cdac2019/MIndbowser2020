@@ -27,4 +27,5 @@
 <fullyQualifiedTypeName name="com.lns.enty.EmployeeRegister"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.Size"/>
 </qualifiedTypeNameHistroy>

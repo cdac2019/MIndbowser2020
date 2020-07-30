@@ -1,32 +1,54 @@
   
 <body>
     <div class="signup-form">
-        <form  (ngSubmit)="  registeremploye()"  method="post">
+        <form name ="Form" #f="ngForm" (ngSubmit)= "f.form.valid && registeremploye()"  method="post">
             <h2> Employee Register</h2>
-            
             <hr>
             <div class="form-group">
-                <input type= "text" [(ngModel)]=emp.empid class="form-control" name="password" placeholder="EmpId" required="required">
+                <input type= "text" [(ngModel)]=emp.empid #empid="ngModel" [ngClass]="{'is-invalid': f.submitted && empid.invalid }"class="form-control" name="password" placeholder="EmpId" required>
+                   <div *ngIf="f.submitted && empid.invalid" class="invalid-feedback">
+                    <div *ngIf="empid.errors.required">Employee ID Name is required</div>
+                </div>
             </div>
             <div class="form-group">
-                <input type="text"   [(ngModel)]= emp.fristname class="form-control" name=" fristname" placeholder="Frist Name" required="required">
+                <input type="text"   [(ngModel)]= emp.fristname  #fristname="ngModel" [ngClass]="{'is-invalid': f.submitted && fristname.invalid }" class="form-control" name=" fristname" placeholder="Frist Name" required >
+                <div *ngIf="f.submitted &&  fristname.invalid" class="invalid-feedback">
+                    <div *ngIf="fristname.errors.required">Frist Name is required</div>
+                </div>
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]= emp.lastname class="form-control" name="lastname" placeholder="Lastname" required="required">
+                <input type="text" [(ngModel)]= emp.lastname  #lastname="ngModel" [ngClass]="{'is-invalid': f.submitted && lastname.invalid }" class="form-control" name="lastname" placeholder="Lastname" required >
+                <div *ngIf="f.submitted &&  lastname.invalid" class="invalid-feedback">
+                    <div *ngIf="lastname.errors.required">Last Name is required</div>
+                </div>
             </div>
     
             <div class="form-group">
-                <input type="text" [(ngModel)]=emp.address class="form-control" name="address" placeholder="Address" required="required">
+                <input type="text" [(ngModel)]=emp.address  #address="ngModel" [ngClass]="{'is-invalid': f.submitted && address.invalid }" class="form-control" name="address" placeholder="Address" required>
+                <div *ngIf="f.submitted && address.invalid" class="invalid-feedback">
+                    <div *ngIf=" address.errors.required"> Address is required</div>
+                </div>
             </div>
             
             <div class="form-group">
-                <input type="date" [(ngModel)]=emp.dob class="form-control" name="dob" placeholder="Birth of date" required="required">
+                <input type="date" [(ngModel)]=emp.dob   #dob="ngModel" [ngClass]="{'is-invalid': f.submitted && dob.invalid }"class="form-control" name="dob" placeholder="Birth of date" required>
+                <div *ngIf="f.submitted && dob.invalid" class="invalid-feedback">
+                    <div *ngIf="dob.errors.required"> Birth of date is required</div>
+                </div>
             </div>
             <div class="form-group">
-                <input type= "tel" [(ngModel)]=emp.mobile class="form-control" name="mobile" placeholder=" Mobile Number" required="required">
+                <input type= "tel" [(ngModel)]=emp.mobile  #mobile="ngModel" [ngClass]="{'is-invalid': f.submitted &&  mobile.invalid }"class="form-control" name="mobile" placeholder=" Mobile Number" required pattern="^((\\+91-?)|0)?[0-9]{10}$">
+                <div *ngIf="f.submitted && mobile.invalid" class="invalid-feedback">
+                    <div *ngIf=" mobile.errors.required"> Mobile Number is required</div>
+                    <div *ngIf="mobile.errors.pattern">  Mobile number is Not valid.  </div>
+   
+                </div>
             </div>
             <div class="form-group">
-                <input type="text" [(ngModel)]=emp.city class="form-control" name="city" placeholder="City Name" required="required">
+                <input type="text" [(ngModel)]=emp.city  #city="ngModel" [ngClass]="{'is-invalid': f.submitted && city.invalid }" class="form-control" name="city" placeholder="City Name" required>
+                <div *ngIf="f.submitted && city.invalid" class="invalid-feedback">
+                    <div *ngIf="city.errors.required"> City Name is required</div>
+                </div>
             </div>
             <div   class="form-group">
                 <button type="submit" class="btn btn-primary btn-block btn-lg">Register</button>

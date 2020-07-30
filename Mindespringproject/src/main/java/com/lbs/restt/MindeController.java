@@ -1,6 +1,8 @@
 package com.lbs.restt;
 
 import java.util.List;
+ 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,16 +27,20 @@ public class MindeController {
 	@Autowired
 	private RepositeryMB repositerymb;
 	
- //Rgisters manager Details
+ //Registers manager Details
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	//@GetMapping("/register")
 	public  Status registerion(@RequestBody ManagerRegister reg ) {
+		
+	 
 		repositerymb.save(reg);
 
 		Status status = new Status();
 		status.setStatusCode(100);
 		status.setStatusMessage("Registration Successfull!!!");
 		return status;
+	
+		
 	}
 
 	//Manager login 

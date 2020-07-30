@@ -1,8 +1,13 @@
 package com.lns.enty;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.sun.istack.NotNull;
 
 
 //Employee Detail class
@@ -11,11 +16,19 @@ import javax.persistence.Table;
 public class EmployeeRegister {
 	@Id
 	private String empid;
+	@NotNull
+	@NotBlank(message = "FristName may not be null")
 	private String fristname;
+	@Column(name = "lastname")
+	@NotBlank(message = "LastName may not be null")
 	private String lastname; 
+	@NotBlank(message = "Address may not be null")
 	private String address;
+	@NotBlank(message = " Birth of date may not be null")
 	private String dob;
+	@Size(min=10,max=12)
 	private long mobile;
+	@NotBlank(message = "city may not be null")
 	private String city;
 	public String getEmpid() {
 		return empid;

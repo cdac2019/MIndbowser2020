@@ -26,12 +26,12 @@ emp :employee=new employee();
 
 }
 class employee{
-  empid :String;
+      empid :String;
   fristname :String;
-  lastname :String;
-  address :String;
-  dob :String;
-  mobile :number
-  city :String;
+   lastname :String;
+    address :String;
+        dob :String;
+     mobile :number
+       city :String;
  
 }

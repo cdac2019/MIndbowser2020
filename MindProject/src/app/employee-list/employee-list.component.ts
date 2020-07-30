@@ -16,12 +16,12 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit() {
     this.showemplist();
   }
-   deleteEmployee(empid:String){
+   deleteEmployee(empid1:String){
     
     var url1 = "http://localhost:8080/empdeleted";
     // alert(JSON.stringify(this.reg))
      
-  this.http.post(url1, empid).subscribe(data => {
+  this.http.post(url1,empid1).subscribe(data => {
          this.router.navigate(['/emplist']);
      })
    }  
