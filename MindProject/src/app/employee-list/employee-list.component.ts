@@ -17,11 +17,11 @@ export class EmployeeListComponent implements OnInit {
     this.showemplist();
   }
    deleteEmployee(empid1:String){
-    
+    this.delete=empid1;
     var url1 = "http://localhost:8080/empdeleted";
-    // alert(JSON.stringify(this.reg))
+     alert( this.delete)
      
-  this.http.post(url1,empid1).subscribe(data => {
+  this.http.post(url1,this.delete).subscribe(data => {
          this.router.navigate(['/emplist']);
      })
    }  

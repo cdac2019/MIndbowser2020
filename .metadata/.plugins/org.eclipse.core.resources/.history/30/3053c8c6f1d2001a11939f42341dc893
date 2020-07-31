@@ -83,14 +83,14 @@ public class MindeController {
 		return repositerymb.emplist();
 	}
 	// Delete Employee Details
-	@RequestMapping(value="/empdeleted",method=RequestMethod.POST)
+	@RequestMapping(value="/empdeleted",method=RequestMethod.GET)
 	public  void  employeedeleted(@RequestBody String reg)
 	{
-		System.out.println( reg);
-		  repositerymb.delete123(reg);
+		System.out.println("delete");
+		  repositerymb.delete(reg);
 	}	
 	//Update employee Details
-	@RequestMapping(value="/empUpdate",method=RequestMethod.POST)
+	@RequestMapping(value="/empUpdate",method=RequestMethod.GET)
 	public  void  employeeupdate(@RequestBody  EmployeeRegister reg)
 	{
 		System.out.println("delete");

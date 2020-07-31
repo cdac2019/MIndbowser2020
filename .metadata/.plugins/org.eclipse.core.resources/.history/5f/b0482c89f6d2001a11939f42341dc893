@@ -59,7 +59,7 @@ public class RepositeryMB {
 		@Transactional
 		public void delete123(String reg) {
 			// TODO Auto-generated method stub
-			entitymanager.createQuery("delete EmployeeRegister where empid=:empid ")
+			entitymanager.createQuery("Delete f from EmployeeRegister where f.empid=:empid ")
 			.setParameter("empid",reg)
 			.executeUpdate();
 		}

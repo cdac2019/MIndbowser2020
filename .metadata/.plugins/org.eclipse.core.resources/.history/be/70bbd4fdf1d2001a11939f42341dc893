@@ -45,7 +45,11 @@ public void setId(int id) {
 	 
 	@Column(name = "email")
 	@NotBlank(message = " Email may not be null")
-	 
+	@Pattern.List({
+	    @Pattern(regexp = "(?=.*[0-9]).+", message = " Email must contain one digit."),
+	    @Pattern(regexp =  "(?=.*[a-z]).+", message = "Email must contain  lowercase letter."),
+	    @Pattern(regexp = "(?=.*[@.]).+", message ="Email must contain @ special character.")
+	     })
 	private String email; 
 	 
 	@Column(name = "address")
