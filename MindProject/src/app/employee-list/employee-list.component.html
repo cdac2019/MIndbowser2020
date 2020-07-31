@@ -6,35 +6,36 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
-                        <tr>
-                            <th scope="col">EmpID</th>
-                            <th scope="col">fristname </th>
-                            <th scope="col">LastName</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">BirthDate</th>
-                            <th scope="col">Mobile</th>
-                            <th scope="col">City</th>
-                            
+                        <tr> 
+                            <th scope="col">EmpID <input type="text" [(ngModel)]= update1 class="form-control" placeholder="Select ID " disabled ></th>
+                            <th scope="col">fristname <input type="text"[(ngModel)]=userlist1.fristname1 class="form-control" name=" fristname1" placeholder="Frist Name   ." required></th>
+                            <th scope="col">LastName<input type="text"[(ngModel)]=userlist1.lastname1 class="form-control" name="  lastname1" placeholder="Last Name   ."required ></th>
+                            <th scope="col">Address<input type="text"[(ngModel)]=userlist1.address1 class="form-control" name=" address1" placeholder="Address   ." required></th>
+                            <th scope="col">BirthDate <input type="date" [(ngModel)]=userlist1.dob1 class="form-control" name=" dob1" placeholder="Birth " required></th>
+                            <th scope="col">Mobile<input type="tel"[(ngModel)]=userlist1.mobile1 class="form-control" name="mobile1" placeholder="Mobile"required ></th>
+                            <th scope="col">City<input type="text"[(ngModel)]=userlist1.city1 class="form-control" name="city1" placeholder="City"required ></th>
+                            <th scope="col"><button   (click)="UpdateEmployee(userlist1)"> UpdateEmployee </button> </th>
+                   
                               
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let userlist of dem " >
-                            <td>{{ userlist.empid }}</td>
-                            <td>{{ userlist.fristname }}</td>
-                            <td>{{ userlist.lastname }}</td>
-                             <td>{{ userlist.address }}</td>
-                            <td>{{ userlist.dob }}</td>
-                            <td>{{ userlist.mobile }}</td>
-                            <td>{{ userlist.city }}</td>
-                            <td><button (click)="deleteEmployee(userlist.empid)">Delete</button> {{userlist.empid}}</td>
-                            <td><button (click)="UpdateEmployee(userlist.empid)">Update</button></td> 
+                            <td>{{ userlist.empid }}   </td>
+                            <td>{{ userlist.fristname }}  </td>
+                            <td>{{ userlist.lastname }}  </td>
+                             <td>{{ userlist.address }}  </td>
+                            <td>{{ userlist.dob }}  </td>
+                            <td>{{ userlist.mobile }} </td>
+                            <td>{{ userlist.city }} </td>
+                            <td><button (click)="deleteEmployee(userlist.empid)">Delete</button> </td>
+                            <td><button (click)="UpdateEmployee1(userlist.empid)">Select ID</button></td> 
                 
                         </tr>
 
-                        
-                        
+                         
                     </tbody>
+                
                 </table>
             </div>
         </div>

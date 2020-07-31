@@ -68,7 +68,7 @@ public class RepositeryMB {
 		@Transactional
 		public void update(String fristname,String lastname, String address, String city, String empid,String dob,long mobile) {
 			// TODO Auto-generated method stub
-			entitymanager.createQuery("Update  EmployeeRegister dm set dm.fristname=:fristname , dm.lastname=:lastname ,dm.address=:address, dm.city=:city,dm.dob=:dob, dm.mobile=:mobile where dm.empid=:empid")
+			entitymanager.createQuery("Update  EmployeeRegister dm set dm.fristname=:fristname , dm.lastname=:lastname ,dm.address=:address, dm.city=city,dm.mobile=:mobile where dm.empid=:empid")
 			.setParameter("empid",empid)
 			.setParameter("fristname",fristname)
 			.setParameter("lastname",lastname)

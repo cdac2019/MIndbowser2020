@@ -93,7 +93,7 @@ public class MindeController {
 	@RequestMapping(value="/empUpdate",method=RequestMethod.POST)
 	public  void  employeeupdate(@RequestBody  EmployeeRegister reg)
 	{
-		System.out.println(reg.toString());
+		System.out.println( reg.toString());
 		  repositerymb.update(reg.getFristname(), reg.getLastname(),reg.getAddress(), reg.getCity(), reg.getEmpid(), reg.getDob(),  reg.getMobile());
 	}
 	

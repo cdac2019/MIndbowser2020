@@ -26,6 +26,7 @@ public class EmployeeRegister {
 	private String address;
 	@NotBlank(message = " Birth of date may not be null")
 	private String dob;
+	@Size(min=10,max=12)
 	private long mobile;
 	@NotBlank(message = "city may not be null")
 	private String city;
